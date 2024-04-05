@@ -4,9 +4,9 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { MoviesList } from "../pages/MoviesList";
-import { Movie } from "../pages/Movie";
-import { NotFound } from "../pages/NotFound";
+import { MoviesList } from "../../pages/MoviesList";
+import { Movie } from "../../pages/Movie";
+import { NotFound } from "../../pages/NotFound";
 import { PublicPaths, Segments } from "./paths";
 
 export const AppRouter = () => {
