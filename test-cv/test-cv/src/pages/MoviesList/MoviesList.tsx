@@ -1,13 +1,19 @@
-import { Button } from "@mui/material";
+import { Typography } from "@mui/material";
 import { useMoviesQuery } from "../../commons/hooks/useMoviesQuery";
+import { ListBox, WrappedBox } from "./styledComponents";
+import { Card } from "../../commons/components/Card/TopBar";
 
 export const MoviesList = () => {
-  const test = useMoviesQuery;
-  console.log({ test });
+  const movies = useMoviesQuery();
 
   return (
-    <Button variant="contained" color="primary">
-      Hello
-    </Button>
+    <WrappedBox>
+      <Typography variant="h4">List all Movies </Typography>
+      <ListBox>
+        {movies.map((item) => {
+          return <Card key={item.id} title={item.title} />;
+        })}
+      </ListBox>
+    </WrappedBox>
   );
 };
