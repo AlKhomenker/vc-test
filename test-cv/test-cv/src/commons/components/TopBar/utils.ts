@@ -1,4 +1,4 @@
-import { PublicPaths } from "../../routers/paths";
+import { PublicPaths, Segments } from "../../routers/paths";
 
 type TopBarPathsParams = {
   path: string;
@@ -7,5 +7,5 @@ type TopBarPathsParams = {
 
 export const TopBarPaths: TopBarPathsParams[] = [
   { path: PublicPaths.MOVIES, title: "List" },
-  { path: PublicPaths.MOVIE, title: "Movie" },
+  { path: `${PublicPaths.MOVIE}/:${Segments.MOVIE_ID}`, title: "Movie" },
 ];

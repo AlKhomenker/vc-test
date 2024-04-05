@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import { MoviesList } from "../../pages/MoviesList/MoviesList";
 import { Movie } from "../../pages/Movie/Movie";
-import { NotFound } from "../../pages/NotFound";
+import { NotFound } from "../../pages/NotFound/NotFound";
 import { PublicPaths, Segments } from "./paths";
 import { Root } from "../../pages/Root/Root";
 
@@ -21,8 +21,8 @@ export const AppRouter = () => {
             path={`/${PublicPaths.MOVIE}/:${Segments.MOVIE_ID}`}
             element={<Movie />}
           />
-          <Route path={PublicPaths.NOT_FOUND} element={<NotFound />} />
         </Route>
+        <Route path={PublicPaths.NOT_FOUND} element={<NotFound />} />
       </Routes>
     </Router>
   );

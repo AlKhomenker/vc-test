@@ -7,7 +7,7 @@ export const MoviesList = () => {
 
   return (
     <Button variant="contained" color="primary">
-      Hello World
+      Hello
     </Button>
   );
 };
