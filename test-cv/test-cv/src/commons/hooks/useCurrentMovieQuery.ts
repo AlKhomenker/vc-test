@@ -2,8 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import { useEffect, useMemo } from "react";
 import { currentMovieQuery } from "../services/query/queryAPIs";
 import { I_Movie } from "../interfaces/movie";
+import { useErrorContext } from "../context/useErrorContext";
 
 export const useCurrentMovieQuery = (movieId: number): I_Movie | null => {
+  const { setError } = useErrorContext();
   const { data, isLoading, isError, error } = useQuery(
     currentMovieQuery(movieId)
   );
@@ -17,9 +19,9 @@ export const useCurrentMovieQuery = (movieId: number): I_Movie | null => {
 
   useEffect(() => {
     if (isError) {
-      //set context error
+      setError(error);
     }
-  }, [isError, error]);
+  }, [isError, error, setError]);
 
   return currentMovie as I_Movie | null;
 };
