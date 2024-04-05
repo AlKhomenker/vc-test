@@ -4,11 +4,11 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { MoviesList } from "../../pages/MoviesList";
-import { Movie } from "../../pages/Movie";
+import { MoviesList } from "../../pages/MoviesList/MoviesList";
+import { Movie } from "../../pages/Movie/Movie";
 import { NotFound } from "../../pages/NotFound";
 import { PublicPaths, Segments } from "./paths";
-import { Root } from "../../root";
+import { Root } from "../../pages/Root/Root";
 
 export const AppRouter = () => {
   return (
